@@ -12,7 +12,8 @@ namespace MyShop.DataAccess.InMemory
     public class ProductRepository
     {
         ObjectCache cache = MemoryCache.Default;
-        List<Product> products = new List<Product>();
+        List<Product> products;
+            
 
 
         public ProductRepository()
@@ -26,7 +27,7 @@ namespace MyShop.DataAccess.InMemory
 
         public void Commit()
         {
-            cache["produts"]=products;
+            cache["products"]=products;
         }
 
         public void Insert(Product product)
